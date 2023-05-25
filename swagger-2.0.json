@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "BaseController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "base-nestjs-mysql API spec",
+    "description": "Api Service | [swagger.json](/docs/service/swagger.json) | [swagger-2.0.json](swagger-2.0.json)",
+    "version": "1.99.2",
+    "contact": {}
+  },
+  "tags": [],
+  "swagger": "2.0",
+  "host": "localhost:3113",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/",
+  "definitions": {},
+  "securityDefinitions": {
+    "access-token": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "access-token"
+    }
+  },
+  "x-components": {}
+}

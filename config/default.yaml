@@ -1,0 +1,14 @@
+# Default config
+service:
+  name: api-service
+  description: Api Service
+  baseUrl: /api/service
+  docsBaseUrl: /docs/service
+  apiVersion: 1.99.2
+  appVersion: 1.99.2
+
+server:
+  host: localhost
+  port: 3113
+  hostname: localhost:3113
+  swaggerSchema: http

@@ -1,0 +1,11 @@
+service:
+  name: npm_package_name
+  description: npm_package_description
+  baseUrl: /api/service
+  docsBaseUrl: /docs/service
+
+server:
+  host: SERVER_HOST
+  port: SERVER_PORT
+  hostname: SERVER_HOSTNAME
+  swaggerSchema: SWAGGER_SCHEMA
