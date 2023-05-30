@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindManyOptions, Repository } from 'typeorm';
+import { FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { User } from './base.entity';
 
 @Injectable()
@@ -10,15 +10,15 @@ export class BaseRepository {
     private usersRepository: Repository<User>,
   ) {}
 
-  findAll(option: FindManyOptions): Promise<User[]> {
-    return this.usersRepository.find();
+  findBy(option?: FindManyOptions): Promise<User[]> {
+    return this.usersRepository.find(option);
   }
 
-  findOne(id: number, option: FindManyOptions): Promise<User | null> {
-    return this.usersRepository.findOneBy({ id });
+  findOne(option?: FindOneOptions): Promise<User | null> {
+    return this.usersRepository.findOne(option);
   }
 
-  async remove(id: number): Promise<void> {
-    await this.usersRepository.delete(id);
+  create(document?: User): Promise<User> {
+    return this.usersRepository.save(document);
   }
 }

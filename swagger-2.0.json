@@ -2,13 +2,65 @@
   "paths": {
     "/": {
       "get": {
-        "operationId": "BaseController_getHello",
-        "parameters": [],
+        "operationId": "BaseController_findAll",
+        "parameters": [
+          {
+            "name": "firstName",
+            "required": false,
+            "in": "query",
+            "type": "string",
+            "x-example": "abc"
+          },
+          {
+            "name": "lastName",
+            "required": false,
+            "in": "query",
+            "type": "string",
+            "x-example": "def"
+          },
+          {
+            "name": "isActive",
+            "required": false,
+            "in": "query",
+            "type": "boolean",
+            "x-example": true
+          },
+          {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "type": "string",
+            "x-example": "0c2b7220-b0b8-4c47-9f67-d5b34ed123a1"
+          }
+        ],
         "responses": {
           "200": {
             "description": ""
           }
         }
+      }
+    },
+    "/createUser": {
+      "post": {
+        "operationId": "BaseController_createNewUser",
+        "parameters": [
+          {
+            "required": true,
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/BaseDto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "consumes": [
+          "application/json"
+        ]
       }
     }
   },
@@ -25,7 +77,25 @@
     "http"
   ],
   "basePath": "/",
-  "definitions": {},
+  "definitions": {
+    "BaseDto": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "example": "abc"
+        },
+        "lastName": {
+          "type": "string",
+          "example": "def"
+        },
+        "isActive": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    }
+  },
   "securityDefinitions": {
     "access-token": {
       "type": "apiKey",

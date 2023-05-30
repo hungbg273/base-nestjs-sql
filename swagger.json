@@ -3,10 +3,68 @@
   "paths": {
     "/": {
       "get": {
-        "operationId": "BaseController_getHello",
-        "parameters": [],
+        "operationId": "BaseController_findAll",
+        "parameters": [
+          {
+            "name": "firstName",
+            "required": false,
+            "in": "query",
+            "example": "abc",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lastName",
+            "required": false,
+            "in": "query",
+            "example": "def",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isActive",
+            "required": false,
+            "in": "query",
+            "example": true,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "example": "0c2b7220-b0b8-4c47-9f67-d5b34ed123a1",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/createUser": {
+      "post": {
+        "operationId": "BaseController_createNewUser",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaseDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
             "description": ""
           }
         }
@@ -33,6 +91,24 @@
         "name": "access-token"
       }
     },
-    "schemas": {}
+    "schemas": {
+      "BaseDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "example": "abc"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "def"
+          },
+          "isActive": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      }
+    }
   }
 }
