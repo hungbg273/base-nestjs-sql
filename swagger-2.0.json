@@ -30,14 +30,19 @@
             "required": false,
             "in": "query",
             "type": "string",
-            "x-example": "0c2b7220-b0b8-4c47-9f67-d5b34ed123a1"
+            "x-example": "95d82ef2-34fd-4510-b2bf-03d8662d0e09"
           }
         ],
         "responses": {
           "200": {
             "description": ""
           }
-        }
+        },
+        "security": [
+          {
+            "access-token": []
+          }
+        ]
       }
     },
     "/createUser": {
@@ -58,6 +63,11 @@
             "description": ""
           }
         },
+        "security": [
+          {
+            "access-token": []
+          }
+        ],
         "consumes": [
           "application/json"
         ]
@@ -66,7 +76,7 @@
   },
   "info": {
     "title": "base-nestjs-mysql API spec",
-    "description": "Api Service | [swagger.json](/docs/service/swagger.json) | [swagger-2.0.json](swagger-2.0.json)",
+    "description": "Api Service | [swagger.json](/docs/service/swagger.json) | \n      [swagger-2.0.json](/docs/service/swagger-2.0.json)",
     "version": "1.99.2",
     "contact": {}
   },

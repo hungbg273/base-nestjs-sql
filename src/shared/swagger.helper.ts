@@ -15,7 +15,10 @@ export async function initializeSwagger(app: INestApplication) {
     .setDescription(
       `${serviceDescription} | [swagger.json](${config.get(
         'service.docsBaseUrl',
-      )}/swagger.json) | [swagger-2.0.json](swagger-2.0.json)`,
+      )}/swagger.json) | 
+      [swagger-2.0.json](${config.get(
+        'service.docsBaseUrl',
+      )}/swagger-2.0.json)`,
     )
     .setVersion(apiVersion)
     .addServer(

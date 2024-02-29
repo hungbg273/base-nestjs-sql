@@ -1,7 +1,9 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { BaseService } from './base.service';
 import { BaseDto, BaseFindDto } from './base.dto';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiBearerAuth('access-token')
 @Controller()
 export class BaseController {
   constructor(private readonly appService: BaseService) {}
